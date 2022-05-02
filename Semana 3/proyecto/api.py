@@ -12,7 +12,7 @@ api = Api(
     description='Car Prices Prediction')
 
 ns = api.namespace('predict', 
-     description='Car Prices Regressor Classifier')
+     description='Car Prices Regressor')
    
 parser = api.parser()
 
@@ -56,7 +56,7 @@ resource_fields = api.model('Resource', {
 })
 
 @ns.route('/')
-class PhishingApi(Resource):
+class CarPrices(Resource):
 
     @api.doc(parser=parser)
     @api.marshal_with(resource_fields)
