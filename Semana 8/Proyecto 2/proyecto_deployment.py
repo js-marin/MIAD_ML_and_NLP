@@ -5,11 +5,13 @@ import os
 
 def predict_genre(Plot):
 
+
+
     LR = joblib.load(os.path.dirname(__file__) + '/logistic.pkl')
     vect = joblib.load(os.path.dirname(__file__) + '/vectorizer.pkl')
     labels_enc = joblib.load(os.path.dirname(__file__) + '/labels.pkl')
 
-    vectorized_plot  = vect.transform(Plot)
+    vectorized_plot  = vect.transform([Plot])
 
     predicted = LR.predict(vectorized_plot)
 
